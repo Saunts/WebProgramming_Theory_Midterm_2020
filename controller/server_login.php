@@ -1,8 +1,12 @@
 <?php
 	session_start();
 	include "../controller/config.php";
+	include "../model/databasecon.php";
+	
+	$db = new database();
+	
 	if(isset($_POST['login'])){
-		$uname =mysqli_real_escape_string($conn, $_POST['username']);
+		$uname = mysqli_real_escape_string($conn, $_POST['username']);
 		$password = mysqli_real_escape_string($conn, $_POST['password']);
 
 		if(empty($uname)){
@@ -17,12 +21,12 @@
 
 			$query = "SELECT * FROM datauser WHERE username='$uname' AND password='$password'";
 			$result = mysqli_query($conn, $query);
+			
 			$resultarr = mysqli_fetch_array($result);
 
 			if (mysqli_num_rows($result)) {
 				$_SESSION['username'] = $uname;
 				$uid = $db->query("SELECT userid from userprofile where username = '$uname';");
-				$uid = mysqli_fetch_array($uid);
 				$uid = $uid['userid'];
 				$_SESSION['userid'] = intval($uid);
 				$_SESSION['success'] = "Logged in successfully";

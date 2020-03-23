@@ -2,21 +2,20 @@
                 class database{
 
                     var $host = "localhost";
-                    var $username = "root";
-                    var $dbname = "utsteori";
-                    var $password = "";
+					var $username = "kuromyid_pemwebuts";
+					var $password = "123456";
+					var $dbname = "kuromyid_pemwebuts";
                     var $db;
 
                     function __construct()
                     {   
-                        $this->db = mysqli_connect($this->host, $this->username, $this->password);
-                        mysqli_query($this->db, "Create database ".$this->dbname);
-						mysqli_select_db($this->db ,$this->dbname);
+                        $this->db = mysqli_connect($this->host, $this->username, $this->password, $this->dbname);
 						
 					}
 
                     function showstatus()
                     {
+						$hasil = [];
                         $data = mysqli_query($this->db, "SELECT * FROM status LEFT JOIN userprofile ON (status.userid = userprofile.userid);");
                         while($d = mysqli_fetch_array($data)){
                             $hasil[] = $d;
@@ -38,7 +37,9 @@
 
 					public function query($thequery)
 					{
-						return $this->db->query($thequery);
+						$data = mysqli_query($this->db, $thequery);
+                        $d = mysqli_fetch_array($data);
+						return $d;
 					}
 		
                     function deletestatus($id)
@@ -60,7 +61,7 @@
 						while($d = mysqli_fetch_array($data)){
                             $hasil[] = $d;
                         }
-						{return $hasil;}
+						return $hasil;
 					}
 					
 					function friend($userid, $friendid)
