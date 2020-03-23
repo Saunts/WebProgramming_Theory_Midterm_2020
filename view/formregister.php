@@ -1,4 +1,6 @@
-<?php include('../controller/server.php')?>
+<?php include('../controller/server.php');
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -17,7 +19,7 @@
 			<div class="regis-form">
 				<h2 class="title-form">SIGN UP</h2>
 				<h5 class="title-form">Create a new account</h5>
-				<form method="POST" class="register-form" id="register-form" action="../controller/formregister.php">
+				<form method="POST" class="register-form" id="register-form" action="../controller/server_register.php">
 					<?php include('../controller/errors.php'); ?>
 					<div class="row">
 						<div class="col">

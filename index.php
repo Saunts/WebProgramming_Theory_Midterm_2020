@@ -18,7 +18,6 @@
 	}
 	
 	if(isset($_SESSION['parentid'])) unset($_SESSION['parentid']);
-	
 	$profile = $db->getuserdata($_SESSION['userid']);
 ?>
 <!DOCTYPE html>

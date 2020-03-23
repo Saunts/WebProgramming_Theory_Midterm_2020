@@ -16,7 +16,7 @@
                     function showstatus()
                     {
 						$hasil = [];
-                        $data = mysqli_query($this->db, "SELECT * FROM status LEFT JOIN userprofile ON (status.userid = userprofile.userid);");
+                        $data = mysqli_query($this->db, "SELECT * FROM status LEFT JOIN userprofile ON (status.userid = userprofile.userid) order by 1 desc;");
                         while($d = mysqli_fetch_array($data)){
                             $hasil[] = $d;
                         }

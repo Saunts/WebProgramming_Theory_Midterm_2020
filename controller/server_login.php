@@ -1,3 +1,5 @@
+<body>
+<html>
 <?php
 	session_start();
 	include "../controller/config.php";
@@ -30,7 +32,6 @@
 				$uid = $uid['userid'];
 				$_SESSION['userid'] = intval($uid);
 				$_SESSION['success'] = "Logged in successfully";
-				header('location: ../index.php');
 			}else{
 				array_push($errors, "Wrong username/password combination. please try again.");
 			}
@@ -38,4 +39,11 @@
 
 		}
 	}	
+	
+	echo '<script>
+						window.location.href = "../index.php";
+				</script>';
 ?>
+
+</body>
+</html>

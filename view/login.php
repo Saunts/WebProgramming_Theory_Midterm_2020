@@ -1,4 +1,8 @@
-<?php include('../controller/server.php') ?>
+<?php 
+	session_start();
+
+	session_destroy();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -25,7 +29,7 @@
 			<input  name="kodecaptcha" value="" maxlength="5" required>
 		</div>
 		<button type="submit" name="login" class="btn">Log in</button>
-		<a href="formregister.php">create an account</a>
+		<a href="../view/formregister.php">create an account</a>
 	</form>
 </body>
 </html>
