@@ -1,0 +1,39 @@
+body{
+	font-family: sans-serif;
+	background-color: lightblue;
+	background-size: cover;
+}
+.container{
+	width: 400px;
+    margin: auto;
+}
+.regis-content{
+	margin: 150px auto;
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffff99;
+
+
+}
+.regis-content{
+	display: inline-block;
+}
+.title-form{
+	text-align: center;
+	color: #00394d;
+}
+.btn{
+	margin-top: 5px;
+	color: #00394d;
+	border-color: white;
+
+}
+.regis-form{
+	color: #00394d;
+}
+img{
+	max-width: 100%;
+  height: auto;
+}
